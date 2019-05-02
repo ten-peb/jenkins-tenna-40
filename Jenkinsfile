@@ -12,7 +12,9 @@ node("master"){
     }
   }
   stage("spinup containers"){
+    dir(cloneto){
       sh('docker-compose up -d --build')
+    }
   }
   stage("notify qa"){
   }
