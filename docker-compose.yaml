@@ -6,4 +6,37 @@ services:
     build: ui
     image: tenna-ui:0.5.0
     restart: always
-    
+  redis:
+    image: redis
+    hostname: redis40
+    domainname: dv1.tenna.com
+    container_name: redisten40
+
+  postgres:
+    hostname: tennadb40
+    domainname: dv1.tenna.com
+    image: postgres:11.1
+    container_name:tennadb40
+    ports:
+      - "9432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: database_development
+
+  backend-web:
+    build: backend
+    #    command: [sh, -c, "npm install -g sequelize-cli && (cd /opt/tenna-crud/app/db; sequelize db:migrate) && node /opt/tenna-crud/app/www"]
+    command: [node, "/opt/tenna-crud/app/www"]
+    volumes:
+      - backend-web-opt:/opt/tenna-crud
+    ports:
+      - "9003:3000"
+    links:
+      - "postgres"
+      - "redis"
+    environment:
+      NODE_ENV: development
+
+volumes:
+  backend-web-opt:
