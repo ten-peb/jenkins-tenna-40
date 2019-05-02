@@ -16,7 +16,7 @@ services:
     hostname: tennadb40
     domainname: dv1.tenna.com
     image: postgres:11.1
-    container_name:tennadb40
+    container_name: tennadb40
     ports:
       - "9432:5432"
     environment:
