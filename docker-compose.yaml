@@ -1,0 +1,9 @@
+version: "3"
+services:
+  tenna-ui:
+    hostname: tenna-ui
+    domainname: dv1.tenna.com
+    build: ui
+    image: tenna-ui:0.5.0
+    restart: always
+    
