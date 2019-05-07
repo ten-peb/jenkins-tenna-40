@@ -9,7 +9,7 @@ COPY ./backend/app/ /opt/tenna-crud/app/
 COPY ./backend/test /opt/tenna-crud/test/
 COPY ./backend/.env.sample .env
 COPY ./backend/.docker.env.sample .docker.env
-COPY ./backend/.sequelizerrc .sequelizerrc 
+COPY ./backend/.sequelizerrc .sequelizerc 
 
 
 RUN npm install --quiet
