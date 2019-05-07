@@ -7,7 +7,7 @@ WORKDIR /var/www/html
 
 RUN mkdir public 
 COPY ui/node_modules/ ./node_modules/
-COPY ui/src/ ./
+COPY ui/src/ ./src/
 COPY ui/server.js ./
 
 RUN npm install
