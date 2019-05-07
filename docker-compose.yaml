@@ -3,9 +3,11 @@ services:
   tenna-ui:
     hostname: tenna-ui
     domainname: dv1.tenna.com
+    container_name: tenna-ui
     build: ui
     image: tenna-ui:0.5.0
     restart: always
+    
   redis:
     image: redis
     hostname: redis40
