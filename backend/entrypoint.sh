@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cd /var/www/html && node server.js
 
 node /opt/tenna-crud/app/www
 
