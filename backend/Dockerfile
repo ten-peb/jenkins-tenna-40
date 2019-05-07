@@ -6,10 +6,10 @@ RUN apt-get -y install git
 WORKDIR /opt/tenna-crud
 COPY ./backend/package.json /opt/tenna-crud/package.json
 COPY ./backend/app/ /opt/tenna-crud/app/
-# COPY ./test /opt/tenna-crud/test/
-#COPY .env.sample .env
-#COPY .docker.env.sample .docker.env
-#COPY .sequelizerrc .sequelizerrc 
+COPY ./backend/test /opt/tenna-crud/test/
+COPY ./backend/.env.sample .env
+COPY ./backend/.docker.env.sample .docker.env
+COPY ./backend/.sequelizerrc .sequelizerrc 
 
 
 RUN npm install --quiet
