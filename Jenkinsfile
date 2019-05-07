@@ -17,5 +17,7 @@ node("master"){
     }
   }
   stage("notify qa"){
+    sendEmail(qaTeam(),"Build of ui/backend containers","completed successfully")
+    
   }
 }
