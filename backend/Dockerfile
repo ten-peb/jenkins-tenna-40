@@ -1,7 +1,7 @@
 FROM ubuntu-nodejs-8:0.5.0
 MAINTAINER  Peter L. Berghold <pberghold@tenna.com>
 
-apt-get -y install git
+RUN apt-get -y install git
 
 WORKDIR /opt/tenna-crud
 COPY ./backend/package.json /opt/tenna-crud/package.json
