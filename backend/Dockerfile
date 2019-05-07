@@ -3,8 +3,8 @@ MAINTAINER  Peter L. Berghold <pberghold@tenna.com>
 
 WORKDIR /opt/tenna-crud
 COPY ./backend/package.json /opt/tenna-crud/package.json
-COPY ./app/ /opt/tenna-crud/app/
-COPY ./test /opt/tenna-crud/test/
+COPY ./backend/app/ /opt/tenna-crud/app/
+# COPY ./test /opt/tenna-crud/test/
 COPY .env.example .env
 COPY .docker.env.sample .docker.env
 COPY .sequelizerrc .sequelizerrc 
