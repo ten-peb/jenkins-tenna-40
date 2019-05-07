@@ -5,7 +5,8 @@ EXPOSE 80
 
 WORKDIR /var/www/html
 
-COPY ui/public ./public
+
+COPY ui/node_modules ./public
 COPY ui/server.js ./
 
 RUN npm install

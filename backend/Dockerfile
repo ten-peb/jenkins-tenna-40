@@ -6,6 +6,7 @@ COPY ./backend/package.json /opt/tenna-crud/package.json
 COPY ./backend/app/ /opt/tenna-crud/app/
 COPY ./backend/config/ /opt/tenna-crud/config/
 
+
 RUN npm install --quiet
 
 EXPOSE 3000
