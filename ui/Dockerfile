@@ -1,4 +1,4 @@
-FROM ubuntu-nodejs-8:0.5.0
+FROM ubuntu-nodejs-10:0.5.0
 MAINTAINER Peter L. Berghold <pberghold@tenna.com>
 
 EXPOSE 80
