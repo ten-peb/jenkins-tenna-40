@@ -6,7 +6,7 @@ EXPOSE 80
 WORKDIR /var/www/html
 
 RUN mkdir public 
-# COPY ui/node_modules/ ./node_modules/
+COPY ui/node_modules/ ./node_modules/
 COPY ui/src/ ./src/
 COPY ui/src/index.html ./public/html/
 COPY ui/server.js ./
