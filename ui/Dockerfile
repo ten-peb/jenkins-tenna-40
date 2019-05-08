@@ -6,10 +6,11 @@ EXPOSE 80
 WORKDIR /var/www/html
 
 RUN mkdir public 
-COPY ui/node_modules/ ./node_modules/
-COPY ui/src/ ./src/
-COPY ui/src/index.html ./public/
-COPY ui/server.js ./
+#COPY ui/node_modules/ ./node_modules/
+#COPY ui/src/ ./src/
+#COPY ui/src/index.html ./public/
+#COPY ui/server.js ./
+COPY ui/ /var/www/html/
 
 RUN npm install
 RUN npm cache clean --force
