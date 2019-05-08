@@ -1,7 +1,7 @@
 FROM ubuntu-nodejs-10:0.5.0
 MAINTAINER Peter L. Berghold <pberghold@tenna.com>
 
-EXPOSE 80
+EXPOSE 8081
 
 WORKDIR /var/www/html
 
