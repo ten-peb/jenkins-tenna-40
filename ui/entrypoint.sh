@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xv 
 
 # cd /var/www/html && node server.js
 cd /var/www/html && npm start 
