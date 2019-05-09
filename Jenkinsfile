@@ -22,7 +22,7 @@ node("master"){
     ]
     def String message = message_lines.join("\n")
     sendEmail(qaTeam(),"Pending Approval (Jenkins)",message)
-    timeout(time: 5,unit: 'Day') { 
+    timeout(time: 5,unit: 'DAYS') { 
       approve = getUserApproval(
       'spinup containers','about to  spin up new containers',
       'Do you approve?'
