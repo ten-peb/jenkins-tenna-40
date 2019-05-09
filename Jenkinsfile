@@ -15,7 +15,7 @@ node("master"){
     def String  joburl = env.BUILD_URL
     def String[] message_lines = [
     "Greetings",
-    "There is a job on Jenkins requiring your approval to continue."
+    "There is a job on Jenkins requiring your approval to continue.",
     "Please follow this URL: " + joburl,
     "Go to the console output and scroll to the bottom to either",
     "give or deny approval.  This will invalidate in five days."
