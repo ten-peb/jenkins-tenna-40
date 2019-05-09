@@ -10,7 +10,7 @@ node("master"){
 //      sh('cp -rp /data/staging/ui ui/') // clone frontend artifacts
 //      sh('cp -rp /data/staging/backend backend/') // clone backend artifacts
 //    }
-    
+   stage("Ask Permission"){    
     def Boolean approve = false
     def String  joburl = env.BUILD_URL
     def String[] message_lines = [
