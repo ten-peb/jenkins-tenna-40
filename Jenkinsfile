@@ -5,11 +5,11 @@ node("master"){
     sh('rm -rf work')  // clean up before cloning
     doGitClone(repo,cloneto)
   }
-  stage("gather artifacts"){
-    dir(cloneto){
-      sh('cp -rp /data/staging/ui ui/') // clone frontend artifacts
-      sh('cp -rp /data/staging/backend backend/') // clone backend artifacts
-    }
+//  stage("gather artifacts"){
+//    dir(cloneto){
+//      sh('cp -rp /data/staging/ui ui/') // clone frontend artifacts
+//      sh('cp -rp /data/staging/backend backend/') // clone backend artifacts
+//    }
     
     def Boolean approve = false
     def String  joburl = env.BUILD_URL
@@ -22,7 +22,7 @@ node("master"){
     ]
     def String message = message_lines.join("\n")
     sendEmail(qaTeam(),"Pending Approval (Jenkins)",message)
-    timeout(time: 5,unit: 'Days') { 
+    timeout(time: 5,unit: 'Day') { 
       approve = getUserApproval(
       'spinup containers','about to  spin up new containers',
       'Do you approve?'
