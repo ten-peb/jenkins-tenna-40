@@ -4,7 +4,6 @@ services:
     hostname: tenna-ui
     domainname: dv1.tenna.com
     container_name: tenna-ui
-    build: ui
     image: tenna-ui:0.5.0
     restart: always
     ports:
@@ -29,7 +28,6 @@ services:
       POSTGRES_DB: database_development
 
   backend-web:
-    build: backend
     image: backend-web:0.5.0
     container_name: backend-web
     #    command: [sh, -c, "npm install -g sequelize-cli && (cd /opt/tenna-crud/app/db; sequelize db:migrate) && node /opt/tenna-crud/app/www"]
