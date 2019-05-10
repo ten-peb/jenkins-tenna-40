@@ -25,12 +25,7 @@ node("master"){
     sendEmail(qaTeam(),"Pending Approval (Jenkins)",message)
     timeout(time: 5,unit: 'DAYS') {
       Boolean retval = input( id: 'Approve Docker Builds',
-      message: 'Shall I build the Docker containers?',
-      parameters: [ $class: 'BooleanParam',
-        defaultValue: true,
-        description: 'Yes or no?'
-	
-      ]
+      message: 'Shall I build the Docker containers?'
       )  
         }
     if ( approve != true ) {
