@@ -20,14 +20,19 @@ node("master"){
     "Go to the console output and scroll to the bottom to either",
     "give or deny approval.  This will invalidate in five days."
     ]
+    
     def String message = message_lines.join("\n")
     sendEmail(qaTeam(),"Pending Approval (Jenkins)",message)
-    timeout(time: 5,unit: 'DAYS') { 
-      approve = getUserApproval(
-      'spinup containers','about to  spin up new containers',
-      'Do you approve?'
-      )
-    }
+    timeout(time: 5,unit: 'DAYS') {
+      Boolean retval = input( id: 'Approve Docker Builds',
+      message: 'Shall I build the Docker containers?',
+      parameters: [ $class: 'BooleanParameterDefinition',
+        defaultValue: true,
+        description: 'Yes or no?'
+	
+      ]
+      )  
+        }
     if ( approve != true ) {
       continuePipeline = false
       currentBuild.result = 'FAILURE'
