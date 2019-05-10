@@ -26,7 +26,7 @@ node("master"){
     timeout(time: 5,unit: 'DAYS') {
       Boolean retval = input( id: 'Approve Docker Builds',
       message: 'Shall I build the Docker containers?',
-      parameters: [ $class: 'BooleanParameterDefinition',
+      parameters: [ $class: 'BooleanParam',
         defaultValue: true,
         description: 'Yes or no?'
 	
