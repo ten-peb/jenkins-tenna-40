@@ -28,10 +28,6 @@ node("master"){
       message: 'Shall I build the Docker containers?'
       )  
         }
-    if ( approve != true ) {
-      continuePipeline = false
-      currentBuild.result = 'FAILURE'
-    }
   }
   stage("spinup containers"){
     dir(cloneto){
