@@ -1,4 +1,4 @@
-FROM ubuntu-nodejs-10:0.5.0
+FROM tenna/nodejs:latest
 MAINTAINER Peter L. Berghold <pberghold@tenna.com>
 
 EXPOSE 8081

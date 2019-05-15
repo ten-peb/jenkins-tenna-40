@@ -1,5 +1,19 @@
 version: "3"
 services:
+  rabbitmq:
+    hostname: mq
+    domainname: dv1.tenna.com
+    container_name: mq
+    image: tenna/rabbitmq:latest
+    restart: always
+
+  mongodb:
+    hostname: mongo
+    domainname: dv1.tenna.com
+    container_name: mongo
+    image: tenna/mongodb:latest
+    restart: always
+    
   tenna-ui:
     hostname: tenna-ui
     domainname: dv1.tenna.com
