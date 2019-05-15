@@ -44,8 +44,6 @@ services:
   backend-web:
     image: backend-web:0.5.0
     container_name: backend-web
-    #    command: [sh, -c, "npm install -g sequelize-cli && (cd /opt/tenna-crud/app/db; sequelize db:migrate) && node /opt/tenna-crud/app/www"]
-    command: [node, "/opt/tenna-crud/app/www"]
     volumes:
       - backend-web-opt:/opt/tenna-crud
     ports:
