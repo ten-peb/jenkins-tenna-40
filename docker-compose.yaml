@@ -24,7 +24,7 @@ services:
       - "9080:8081"
     
   redis:
-    image: redis
+    image: tenna/redis:latest
     hostname: redis40
     domainname: dv1.tenna.com
     container_name: redisten40
@@ -32,7 +32,7 @@ services:
   postgres:
     hostname: tennadb40
     domainname: dv1.tenna.com
-    image: postgres:11.1
+    image: tenna/postgresql:latest
     container_name: tennadb40
     ports:
       - "9432:5432"
