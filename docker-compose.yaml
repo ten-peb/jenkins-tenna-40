@@ -32,7 +32,7 @@ services:
   postgres:
     hostname: tennadb40
     domainname: dv1.tenna.com
-    image: tenna/postgresql:latest
+    image: tenna/postgresql11:latest
     container_name: tennadb40
     ports:
       - "9432:5432"
