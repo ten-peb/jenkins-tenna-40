@@ -24,7 +24,7 @@ services:
       - "9080:8081"
     
   redis:
-    image: tenna/redis:latest
+    image: redis
     hostname: redis40
     domainname: dv1.tenna.com
     container_name: redisten40
